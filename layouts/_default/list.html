@@ -1,8 +1,25 @@
 {{ define "main" }}
   <h1>{{ .Title }}</h1>
   {{ .Content }}
-  {{ range .Pages }}
-    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-    {{ .Summary }}
-  {{ end }}
+  <div class="mt-8 grid gap-4">
+    <h2 class="font-bold">Pages</h2>
+    {{ range .Pages.ByTitle }}
+      {{ if eq .Page.Kind "section" }}
+        <h2 class="text-red-500">
+          <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+        </h2>
+        <ul class="ml-4">
+          {{ range .Pages }}
+            <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+          {{ end }}
+        </ul>
+        {{ .Summary }}
+      {{ else }}
+        <h2 class="text-blue-500">
+          <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+        </h2>
+        {{ .Summary }}
+      {{ end }}
+    {{ end }}
+  </div>
 {{ end }}

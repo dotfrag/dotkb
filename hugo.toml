@@ -8,21 +8,21 @@ pageRef = '/'
 weight = 10
 
 [[menus.main]]
-name = 'About'
-pageRef = '/about'
+name = 'Bash'
+pageRef = '/bash'
 weight = 20
-
-[[menus.main]]
-name = 'Posts'
-pageRef = '/posts'
-weight = 30
 
 [[menus.main]]
 name = 'Tags'
 pageRef = '/tags'
+weight = 30
+
+[[menus.main]]
+name = 'About'
+pageRef = '/about'
 weight = 40
 
-[module]
-[module.hugoVersion]
-extended = false
-min = "0.116.0"
+# [module]
+# [module.hugoVersion]
+# extended = false
+# min = "0.116.0"
