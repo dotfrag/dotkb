@@ -5,7 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"dev": "concurrently npm:hugo npm:tw",
-		"hugo": "hugo server --buildDrafts",
+		"hugo": "hugo server --buildDrafts --bind 0.0.0.0",
 		"tw": "tailwindcss -i ./assets/css/main.css -o ./public/css/main.css --watch",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
@@ -13,6 +13,8 @@
 	"author": "",
 	"license": "ISC",
 	"devDependencies": {
+		"@catppuccin/tailwindcss": "^0.1.6",
+		"@tailwindcss/typography": "^0.5.10",
 		"autoprefixer": "^10.4.18",
 		"concurrently": "^8.2.2",
 		"cssnano": "^6.1.0",

@@ -22,6 +22,10 @@ name = 'About'
 pageRef = '/about'
 weight = 40
 
+[markup]
+[markup.highlight]
+noClasses = false
+
 # [module]
 # [module.hugoVersion]
 # extended = false
