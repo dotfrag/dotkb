@@ -5,11 +5,12 @@
   <head>
     {{ partial "head.html" . }}
   </head>
-  <body class="grid gap-4 px-4">
+  <body
+    class="grid min-h-screen grid-rows-[auto_1fr_auto] overflow-x-hidden bg-ctp-base text-ctp-text">
     <header>
       {{ partial "header.html" . }}
     </header>
-    <main>
+    <main class="container">
       {{ block "main" . }}{{ end }}
     </main>
     <footer>

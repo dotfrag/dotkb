@@ -1,9 +1,20 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-	content: ["./layouts/**/*.html", "./content/**/*.md"],
-	theme: {
-		extend: {},
-	},
+  content: ["./layouts/**/*.html", "./content/**/*.md"],
+  theme: {
+    extend: {
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            color: "#cdd6f4",
+            "h1,h2,h3,h4,h5,h6": {
+              color: "#cdd6f4",
+            },
+          },
+        },
+      }),
+    },
+  },
   corePlugins: {
     container: false,
   },
