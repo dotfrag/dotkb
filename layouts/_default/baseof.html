@@ -11,13 +11,11 @@
       {{ partial "header.html" . }}
     </header>
     <main class="container w-full">
-      <div class="mb-6 border-t border-ctp-rosewater"></div>
-      <div class="prose prose-invert max-w-none">
-        {{ block "main" . }}{{ end }}
-      </div>
-      <div class="mt-6 border-t border-ctp-rosewater"></div>
+      <div class="mb-6 rounded border-2 border-t border-ctp-rosewater"></div>
+      {{ block "main" . }}{{ end }}
     </main>
-    <footer class="container my-8 w-full">
+    <footer class="container my-6 w-full">
+      <div class="mb-6 rounded border-2 border-t border-ctp-rosewater"></div>
       {{ partial "footer.html" . }}
     </footer>
   </body>

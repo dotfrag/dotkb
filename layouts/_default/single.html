@@ -1,14 +1,20 @@
 {{ define "main" }}
   {{ partial "breadcrumb.html" . }}
+  <div class="prose prose-invert max-w-none prose-h1:mb-2">
+    <h1>{{ .Title }}</h1>
 
+    {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+    {{ $dateHuman := .Date | time.Format ":date_long" }}
+    <div class="text-ctp-overlay1">
+      <time datetime="{{ $dateMachine }}">
+        {{ $dateHuman }}
+      </time>
+      (last updated:
+      <time datetime="{{ $dateMachine }}"> {{ $dateHuman }} </time>)
+    </div>
 
-  <h1>{{ .Title }}</h1>
+    {{ .Content }}
 
-  {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
-  {{ $dateHuman := .Date | time.Format ":date_long" }}
-  <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
-
-  {{ .Content }}
-
-  {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+    {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+  </div>
 {{ end }}
