@@ -1,0 +1,12 @@
+<nav aria-label="breadcrumb" class="not-prose mb-4">
+  <ol>
+    {{ range .Ancestors.Reverse }}
+      <li class="inline [&:not(:last-child)::after]:content-['»']">
+        <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+      </li>
+    {{ end }}
+    <li class="active inline">
+      <a aria-current="page" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+    </li>
+  </ol>
+</nav>
