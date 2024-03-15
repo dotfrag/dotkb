@@ -12,7 +12,7 @@
 
 {{- with index site.Menus $menuID }}
   <nav>
-    <ul>
+    <ul class="flex gap-4">
       {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
     </ul>
   </nav>
@@ -22,10 +22,13 @@
   {{- $page := .page }}
   {{- range .menuEntries }}
     {{- $attrs := dict "href" .URL }}
+    {{- $sharedClasses := "p-2" -}}
     {{- if $page.IsMenuCurrent .Menu . }}
-      {{- $attrs = merge $attrs (dict "class" "bg-slate-500" "aria-current" "page") }}
+      {{- $attrs = merge $attrs (dict "class" (printf "%s bg-slate-500" $sharedClasses) "aria-current" "page") }}
     {{- else if $page.HasMenuCurrent .Menu . }}
-      {{- $attrs = merge $attrs (dict "class" "ancestor" "aria-current" "true") }}
+      {{- $attrs = merge $attrs (dict "class" (printf "%s ancestor" $sharedClasses) "aria-current" "true") }}
+    {{- else -}}
+      {{- $attrs = merge $attrs (dict "class" (printf "%s hover:bg-slate-500" $sharedClasses)) }}
     {{- end }}
     {{- $name := .Name }}
     {{- with .Identifier }}

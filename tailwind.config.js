@@ -1,14 +1,22 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./layouts/**/*.html", "./content/**/*.md"],
   theme: {
     extend: {
+      fontFamily: {
+        mono: ["JetBrains Mono", ...defaultTheme.fontFamily.mono],
+      },
       typography: (theme) => ({
         DEFAULT: {
           css: {
             color: "#cdd6f4",
             "h1,h2,h3,h4,h5,h6": {
               color: "#cdd6f4",
+            },
+            a: {
+              color: "#89b4fa",
             },
           },
         },
@@ -27,7 +35,7 @@ module.exports = {
     ({ addComponents, theme }) => {
       addComponents({
         ".container": {
-          maxWidth: theme("maxWidth.6xl"),
+          maxWidth: theme("maxWidth.7xl"),
           marginLeft: theme("margin.auto"),
           marginRight: theme("margin.auto"),
           paddingLeft: theme("padding.4"),

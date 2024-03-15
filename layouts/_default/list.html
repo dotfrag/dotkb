@@ -5,8 +5,9 @@
     <h2 class="font-bold">Pages</h2>
     {{ range .Pages.ByTitle }}
       {{ if eq .Page.Kind "section" }}
-        <h2 class="text-red-500">
-          <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+        <h2>
+          <span class="font-mono">&gt; </span
+          ><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
         </h2>
         <ul class="ml-4">
           {{ range .Pages }}
@@ -15,9 +16,7 @@
         </ul>
         {{ .Summary }}
       {{ else }}
-        <h2 class="text-blue-500">
-          <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
-        </h2>
+        <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
         {{ .Summary }}
       {{ end }}
     {{ end }}

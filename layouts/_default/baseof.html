@@ -7,13 +7,17 @@
   </head>
   <body
     class="grid min-h-screen grid-rows-[auto_1fr_auto] overflow-x-hidden bg-ctp-base text-ctp-text">
-    <header>
+    <header class="container my-8 w-full">
       {{ partial "header.html" . }}
     </header>
-    <main class="container">
-      {{ block "main" . }}{{ end }}
+    <main class="container w-full">
+      <div class="mb-6 border-t border-ctp-rosewater"></div>
+      <div class="prose prose-invert max-w-none">
+        {{ block "main" . }}{{ end }}
+      </div>
+      <div class="mt-6 border-t border-ctp-rosewater"></div>
     </main>
-    <footer>
+    <footer class="container my-8 w-full">
       {{ partial "footer.html" . }}
     </footer>
   </body>

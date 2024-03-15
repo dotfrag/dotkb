@@ -1,16 +1,7 @@
-/* Background */
-.bg {
-  color: #cdd6f4;
-  background-color: #24273a;
-}
-
-/* PreWrapper and Font */
+/* PreWrapper */
 .chroma {
   color: #cdd6f4;
   background-color: #24273a;
-  font-family: "JetBrains Mono", theme(fontFamily.mono);
-  font-optical-sizing: auto;
-  font-style: normal;
 }
 
 /* Other */
