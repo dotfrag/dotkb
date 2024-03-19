@@ -1,7 +1,22 @@
 {{ define "main" }}
-  {{ .Content }}
-  {{ range site.RegularPages }}
-    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-    {{ .Summary }}
-  {{ end }}
+  <div class="grid gap-8">
+    <div>{{ .Content }}</div>
+    <div class="grid gap-4">
+      {{ range site.RegularPages }}
+        <div class="rounded bg-ctp-surface0 p-4">
+          <div class="flex">
+            <h2 class="text-xl font-bold text-ctp-blue">
+              <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+            </h2>
+            <time
+              class="ml-auto text-ctp-overlay2"
+              datetime="{{ .Date | time.Format "2006-01-02T15:04:05-07:00" }}"
+              >{{ .Date | time.Format ":date_long" }}</time
+            >
+          </div>
+          {{ .Summary }}
+        </div>
+      {{ end }}
+    </div>
+  </div>
 {{ end }}
