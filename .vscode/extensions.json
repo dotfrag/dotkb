@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "budparr.language-hugo-vscode",
+    "eliostruyf.vscode-front-matter"
+  ],
+  "unwantedRecommendations": []
+}
