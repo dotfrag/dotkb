@@ -7,6 +7,7 @@ module.exports = {
     extend: {
       fontFamily: {
         mono: ["JetBrains Mono", ...defaultTheme.fontFamily.mono],
+        sans: ["Titillium Web", ...defaultTheme.fontFamily.sans],
       },
       typography: (theme) => ({
         DEFAULT: {
