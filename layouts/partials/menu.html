@@ -22,13 +22,14 @@
   {{- $page := .page }}
   {{- range .menuEntries }}
     {{- $attrs := dict "href" .URL }}
-    {{- $sharedClasses := "p-2" -}}
+    {{- $sharedClasses := "p-2 rounded" -}}
     {{- if $page.IsMenuCurrent .Menu . }}
-      {{- $attrs = merge $attrs (dict "class" (printf "%s bg-slate-500" $sharedClasses) "aria-current" "page") }}
-    {{- else if $page.HasMenuCurrent .Menu . }}
+      {{- $attrs = merge $attrs (dict "class" (printf "%s bg-ctp-surface1" $sharedClasses) "aria-current" "page") }}
+      {{/* {{- else if $page.HasMenuCurrent .Menu . }}
       {{- $attrs = merge $attrs (dict "class" (printf "%s ancestor" $sharedClasses) "aria-current" "true") }}
+      */}}
     {{- else -}}
-      {{- $attrs = merge $attrs (dict "class" (printf "%s hover:bg-slate-500" $sharedClasses)) }}
+      {{- $attrs = merge $attrs (dict "class" (printf "%s hover:bg-ctp-surface1" $sharedClasses)) }}
     {{- end }}
     {{- $name := .Name }}
     {{- with .Identifier }}
