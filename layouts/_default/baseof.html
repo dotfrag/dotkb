@@ -10,12 +10,12 @@
     <header class="container mt-8 w-full">
       {{ partial "header.html" . }}
     </header>
-    <main class="container w-full">
-      <div class="mb-8 mt-4 rounded border-t border-ctp-rosewater"></div>
+    <main
+      class="container w-full"
+      {{ if eq .Kind "page" }}data-pagefind-body{{ end }}>
       {{ block "main" . }}{{ end }}
     </main>
     <footer class="container my-8 w-full">
-      <div class="mb-4 rounded border-t border-ctp-rosewater"></div>
       {{ partial "footer.html" . }}
     </footer>
   </body>
