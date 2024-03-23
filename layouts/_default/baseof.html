@@ -7,6 +7,9 @@
   </head>
   <body
     class="grid min-h-screen grid-rows-[auto_1fr_auto] overflow-x-hidden bg-ctp-base text-ctp-text">
+    {{ if not hugo.IsProduction }}
+      {{ partial "tw-size-indicator.html" . }}
+    {{ end }}
     <header class="container mt-8 w-full">
       {{ partial "header.html" . }}
     </header>
