@@ -23,15 +23,15 @@
 }
 
 .pagefind-ui__results {
-  @apply grid gap-4;
+  @apply grid max-h-[50vh] gap-4 overflow-auto;
 }
 
 .pagefind-ui__result {
-  @apply rounded border border-ctp-surface2 bg-ctp-surface1 hover:bg-ctp-surface2;
+  @apply rounded border border-ctp-surface2 bg-ctp-surface1 last:mb-4 md:hover:bg-ctp-surface2;
 }
 
 .pagefind-ui__result-inner {
-  @apply p-4;
+  @apply m-4;
 }
 
 .pagefind-ui__result-link {
@@ -52,4 +52,8 @@
   &::before {
     @apply absolute bottom-0 left-0 h-[80%] w-[1px] bg-ctp-overlay1 content-[''];
   }
+}
+
+.pagefind-ui__button {
+  @apply mb-4;
 }
