@@ -6,7 +6,7 @@
     {{ partial "head.html" . }}
   </head>
   <body
-    class="grid min-h-screen grid-rows-[auto_1fr_auto] overflow-x-hidden bg-ctp-base text-ctp-text">
+    class="grid min-h-screen grid-rows-[auto_1fr_auto] bg-ctp-base text-ctp-text">
     {{ if not hugo.IsProduction }}
       {{ partial "tw-size-indicator.html" . }}
     {{ end }}

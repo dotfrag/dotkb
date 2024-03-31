@@ -17,7 +17,7 @@ function initPagefind() {
     resetStyles: false,
   });
 
-  // toggleModal();
+  // showModal();
 }
 
 function showModal() {
