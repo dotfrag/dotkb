@@ -57,3 +57,14 @@
 .pagefind-ui__button {
   @apply mb-4;
 }
+
+.chroma {
+  @apply relative;
+}
+
+.copy-code-button {
+  @apply absolute right-3 top-[0.625rem];
+}
+.copy-code-button--copied {
+  @apply text-ctp-green;
+}
