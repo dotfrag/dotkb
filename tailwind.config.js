@@ -19,6 +19,15 @@ module.exports = {
             a: {
               color: "#89b4fa",
             },
+            code: {
+              color: theme("colors.ctp-mauve.DEFAULT"),
+            },
+            "code::before": {
+              content: '""',
+            },
+            "code::after": {
+              content: '""',
+            },
           },
         },
       }),
