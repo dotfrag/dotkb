@@ -4,6 +4,7 @@
 
 @import "chroma";
 @import "pagefind";
+@import "toc";
 
 /* * {
   outline: 1px solid theme(textColor.ctp-red.DEFAULT) !important;

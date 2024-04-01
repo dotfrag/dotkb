@@ -1,23 +1,33 @@
 {{ define "main" }}
   {{ partial "breadcrumb.html" . }}
-  <div class="prose prose-invert max-w-none prose-h1:mb-2">
-    <h1>{{ .Title }}</h1>
-    {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
-    {{ $dateHuman := .Date | time.Format ":date_long" }}
-    <div class="text-ctp-overlay1">
-      <time datetime="{{ $dateMachine }}">
-        {{ $dateHuman }}
-      </time>
-      {{- if .Lastmod }}
-        {{- $lastmodMachine := .Lastmod | time.Format "2006-01-02T15:04:05-07:00" }}
-        {{- $lastmodHuman := .Lastmod | time.Format ":date_long" }}
-        {{- if ne $dateHuman $lastmodHuman }}
-          (updated:
-          <time datetime="{{ $lastmodMachine }}">{{ $lastmodHuman }}</time>)
+  <div class="flex justify-center gap-4">
+    <div class="prose prose-invert max-w-none prose-h1:mb-2">
+      <h1>{{ .Title }}</h1>
+      {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+      {{ $dateHuman := .Date | time.Format ":date_long" }}
+      <div class="text-ctp-overlay1">
+        <time datetime="{{ $dateMachine }}">
+          {{ $dateHuman }}
+        </time>
+        {{- if .Lastmod }}
+          {{- $lastmodMachine := .Lastmod | time.Format "2006-01-02T15:04:05-07:00" }}
+          {{- $lastmodHuman := .Lastmod | time.Format ":date_long" }}
+          {{- if ne $dateHuman $lastmodHuman }}
+            (updated:
+            <time datetime="{{ $lastmodMachine }}">{{ $lastmodHuman }}</time>)
+          {{- end }}
         {{- end }}
-      {{- end }}
+      </div>
+      <div class="not-prose my-8 md:hidden">
+        {{ partial "toc.html" . }}
+      </div>
+      {{ .Content }}
+      {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
     </div>
-    {{ .Content }}
-    {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+    <div class="ml-2 hidden shrink-0 md:block">
+      <aside class="sticky top-8">
+        {{ partial "toc.html" . }}
+      </aside>
+    </div>
   </div>
 {{ end }}
