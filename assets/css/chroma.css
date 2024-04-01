@@ -453,7 +453,7 @@
   & code {
     display: block;
     overflow-x: auto;
-    max-width: calc(100vw - (theme(padding.4) * 2));
+    max-width: calc(100vw - (theme(padding.4) * 4));
   }
 }
 
