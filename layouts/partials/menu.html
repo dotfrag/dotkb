@@ -12,7 +12,7 @@
 
 {{- with index site.Menus $menuID }}
   <nav>
-    <ul class="flex gap-4">
+    <ul class="flex gap-2">
       {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
     </ul>
   </nav>
@@ -22,7 +22,7 @@
   {{- $page := .page }}
   {{- range .menuEntries }}
     {{- $attrs := dict "href" .URL }}
-    {{- $sharedClasses := "p-2 rounded" -}}
+    {{- $sharedClasses := "p-1 rounded" -}}
     {{- if $page.IsMenuCurrent .Menu . }}
       {{- $attrs = merge $attrs (dict "class" (printf "%s bg-ctp-surface1" $sharedClasses) "aria-current" "page") }}
       {{/* {{- else if $page.HasMenuCurrent .Menu . }}
