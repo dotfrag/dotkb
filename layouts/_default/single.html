@@ -24,8 +24,8 @@
       {{ .Content }}
       {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
     </div>
-    <div class="ml-2 hidden shrink-0 md:block">
-      <aside class="sticky top-8">
+    <div class="hidden shrink-0 md:block">
+      <aside class="sticky top-8 border-l-2 border-l-ctp-sapphire pl-2">
         {{ partial "toc.html" . }}
       </aside>
     </div>
