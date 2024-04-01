@@ -1,76 +1,10 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
-/* .pagefind-ui {
-  @apply rounded-lg bg-ctp-surface0 py-4;
+@import "chroma";
+@import "pagefind";
+
+/* * {
+  outline: 1px solid theme(textColor.ctp-red.DEFAULT) !important;
 } */
-
-.pagefind-ui__search-input {
-  @apply w-full appearance-none bg-transparent px-11 py-[0.85rem] text-ctp-text;
-  &:hover,
-  &:focus {
-    @apply outline-none;
-  }
-}
-
-.pagefind-ui__search-clear {
-  @apply hidden;
-}
-
-.pagefind-ui__results-area {
-  @apply grid gap-4 px-4;
-}
-
-.pagefind-ui__results {
-  @apply grid max-h-[50vh] gap-4 overflow-auto;
-}
-
-.pagefind-ui__result {
-  @apply rounded border border-ctp-surface2 bg-ctp-surface1 last:mb-4 md:hover:bg-ctp-surface2;
-}
-
-.pagefind-ui__result-inner {
-  @apply m-4;
-}
-
-.pagefind-ui__result-link {
-  @apply text-lg font-semibold text-ctp-blue;
-}
-
-.pagefind-ui__result-excerpt {
-  @apply text-sm;
-}
-
-.pagefind-ui mark {
-  @apply bg-ctp-yellow;
-}
-
-.pagefind-ui__result-nested {
-  @apply relative pl-4;
-
-  &::before {
-    @apply absolute bottom-0 left-0 h-[80%] w-[1px] bg-ctp-overlay1 content-[''];
-  }
-}
-
-.pagefind-ui__button {
-  @apply mb-4;
-}
-
-.chroma {
-  @apply relative;
-
-  & code {
-    display: block;
-    overflow-x: auto;
-    max-width: calc(100vw - (theme(padding.4) * 2));
-  }
-}
-
-.copy-code-button {
-  @apply absolute right-[0.8rem] top-[0.7rem];
-}
-.copy-code-button--copied {
-  @apply text-ctp-green;
-}
