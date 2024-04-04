@@ -1,33 +1,41 @@
 {{ define "main" }}
-  {{ partial "breadcrumb.html" . }}
+  {{- if not (eq .Params.breadcrumb false) }}
+    {{ partial "breadcrumb.html" . }}
+  {{- end }}
   <div class="flex justify-center gap-4">
     <div class="prose prose-invert max-w-none prose-h1:mb-2">
       <h1>{{ .Title }}</h1>
-      {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
-      {{ $dateHuman := .Date | time.Format ":date_long" }}
-      <div class="text-ctp-overlay1">
-        <time datetime="{{ $dateMachine }}">
-          {{ $dateHuman }}
-        </time>
-        {{- if .Lastmod }}
-          {{- $lastmodMachine := .Lastmod | time.Format "2006-01-02T15:04:05-07:00" }}
-          {{- $lastmodHuman := .Lastmod | time.Format ":date_long" }}
-          {{- if ne $dateHuman $lastmodHuman }}
-            (updated:
-            <time datetime="{{ $lastmodMachine }}">{{ $lastmodHuman }}</time>)
+      {{- if .Date }}
+        {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+        {{ $dateHuman := .Date | time.Format ":date_long" }}
+        <div class="text-ctp-overlay1">
+          <time datetime="{{ $dateMachine }}">
+            {{ $dateHuman }}
+          </time>
+          {{- if .Lastmod }}
+            {{- $lastmodMachine := .Lastmod | time.Format "2006-01-02T15:04:05-07:00" }}
+            {{- $lastmodHuman := .Lastmod | time.Format ":date_long" }}
+            {{- if ne $dateHuman $lastmodHuman }}
+              (updated:
+              <time datetime="{{ $lastmodMachine }}">{{ $lastmodHuman }}</time>)
+            {{- end }}
           {{- end }}
-        {{- end }}
-      </div>
-      <div class="not-prose my-8 md:hidden">
-        {{ partial "toc.html" . }}
-      </div>
+        </div>
+      {{- end }}
+      {{- if not (eq .Params.toc false) }}
+        <div class="not-prose my-8 md:hidden">
+          {{ partial "toc.html" . }}
+        </div>
+      {{- end }}
       {{ .Content }}
       {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
     </div>
-    <div class="hidden shrink-0 md:block">
-      <aside class="sticky top-8 border-l-2 border-l-ctp-sapphire pl-2">
-        {{ partial "toc.html" . }}
-      </aside>
-    </div>
+    {{- if not (eq .Params.toc false) }}
+      <div class="hidden shrink-0 md:block">
+        <aside class="sticky top-8 border-l-2 border-ctp-sapphire pl-2">
+          {{ partial "toc.html" . }}
+        </aside>
+      </div>
+    {{- end }}
   </div>
 {{ end }}
