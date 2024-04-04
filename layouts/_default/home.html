@@ -3,8 +3,8 @@
     {{/* TODO: banner */}}
     <div>{{ .Content }}</div>
     <div class="grid gap-4">
-      {{ range site.RegularPages }}
-        <div class="rounded bg-ctp-surface0 p-4">
+      {{ range where site.RegularPages "Params.post" "ne" "false" }}
+        <div class="rounded bg-ctp-surface0 p-4 hover:bg-ctp-surface1">
           <div class="flex">
             <h2 class="text-xl font-bold text-ctp-blue">
               <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
@@ -15,7 +15,7 @@
               >{{ .Date | time.Format ":date_long" }}</time
             >
           </div>
-          {{ .Summary }}
+          <div>{{ .Summary }}</div>
         </div>
       {{ end }}
     </div>
