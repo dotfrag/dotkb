@@ -3,6 +3,7 @@
 @import "tailwindcss/utilities";
 
 @import "chroma";
+@import "code";
 @import "pagefind";
 @import "toc";
 

@@ -1,0 +1,18 @@
+/* Chroma overrides */
+.chroma {
+  @apply relative;
+
+  & code {
+    display: block;
+    overflow-x: auto;
+    max-width: calc(100vw - (theme(padding.4) * 4));
+  }
+}
+
+/* Copy code button */
+.copy-code-button {
+  @apply absolute right-[0.8rem] top-[0.7rem];
+}
+.copy-code-button--copied {
+  @apply text-ctp-green;
+}
