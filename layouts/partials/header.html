@@ -3,7 +3,8 @@
   <button
     id="searchModalSearchBtn"
     type="button"
-    class="hidden w-64 items-center rounded-md py-1.5 pl-2 pr-3 text-sm leading-6 text-slate-400 shadow-sm ring-1 ring-slate-900/10 hover:ring-ctp-lavender lg:flex dark:bg-ctp-surface0 dark:hover:bg-ctp-surface1">
+    class="hidden w-64 items-center rounded-md py-1.5 pl-2 pr-3 text-sm leading-6 text-slate-400 shadow-sm ring-1 ring-slate-900/10 hover:ring-ctp-lavender lg:flex dark:bg-ctp-surface0 dark:hover:bg-ctp-surface1"
+    data-open-modal>
     <svg
       width="24"
       height="24"
@@ -23,6 +24,7 @@
       >Ctrl K</span
     >
   </button>
+  {{ partial "searchModal.html" . }}
   {{/* TODO: responsive navbar */}}
   {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
 </div>

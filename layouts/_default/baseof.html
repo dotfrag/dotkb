@@ -2,7 +2,7 @@
 <html
   lang="{{ or site.Language.LanguageCode site.Language.Lang }}"
   dir="{{ or site.Language.LanguageDirection `ltr` }}"
-  class="scroll-smooth">
+  class="dark scroll-smooth">
   <head>
     {{ partial "head.html" . }}
   </head>
@@ -22,6 +22,5 @@
     <footer class="container my-8 w-full">
       {{ partial "footer.html" . }}
     </footer>
-    {{ partial "searchModal.html" . }}
   </body>
 </html>

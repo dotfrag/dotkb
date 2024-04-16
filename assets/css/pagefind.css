@@ -1,61 +1,93 @@
-/* .pagefind-ui {
-  @apply rounded-lg bg-ctp-surface0 py-4;
-} */
+.pagefind-ui__form {
+  @apply relative;
+
+  &::before {
+    @apply absolute left-3 top-3 h-4 w-4 bg-ctp-text;
+    content: "";
+    mask: url("data:image/svg+xml,%3Csvg data-slot='icon' fill='none' stroke-width='1.5' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' aria-hidden='true'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z'%3E%3C/path%3E%3C/svg%3E")
+      center no-repeat;
+  }
+}
 
 .pagefind-ui__search-input {
-  @apply w-full appearance-none bg-transparent px-11 py-[0.85rem] text-ctp-text;
-  &:hover,
-  &:focus {
-    @apply outline-none;
-  }
+  @apply h-10 w-full appearance-none rounded border border-ctp-rosewater/25 bg-ctp-mantle px-10 text-ctp-text accent-ctp-rosewater/50;
 }
 
 .pagefind-ui__search-clear {
   @apply hidden;
 }
 
-.pagefind-ui__results-area {
-  @apply grid gap-4 px-4;
+.pagefind-ui__message {
+  @apply py-4 text-ctp-subtext1;
 }
 
-.pagefind-ui__results {
-  @apply grid max-h-[50vh] gap-4 overflow-auto;
+.pagefind-ui__results > * + * {
+  @apply mt-4;
 }
 
-.pagefind-ui__result {
-  @apply relative rounded border border-ctp-surface2 bg-ctp-surface1 last:mb-4 md:hover:bg-ctp-surface2;
+.pagefind-ui__result-inner > .pagefind-ui__result-excerpt {
+  @apply mt-0 bg-ctp-base;
 }
 
-.pagefind-ui__result-inner {
-  @apply m-4;
+.pagefind-ui__result-inner > .pagefind-ui__result-title {
+  @apply relative bg-ctp-base;
+}
+
+.pagefind-ui__result-inner > .pagefind-ui__result-title::before {
+  @apply absolute left-3.5 top-3.5 h-5 w-5 bg-ctp-overlay2;
+  content: "";
+  mask: url("data:image/svg+xml,%3Csvg data-slot='icon' fill='none' stroke-width='1.5' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' aria-hidden='true'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z'%3E%3C/path%3E%3C/svg%3E")
+    center no-repeat;
 }
 
 .pagefind-ui__result-link {
-  @apply text-lg font-semibold text-ctp-blue;
+  @apply font-bold text-ctp-blue;
 }
 
 .pagefind-ui__result-excerpt {
   @apply text-sm;
+  overflow-wrap: anywhere;
 }
 
-.pagefind-ui mark {
-  @apply bg-ctp-yellow;
+.pagefind-ui__result-inner > .pagefind-ui__result-excerpt {
+  @apply pb-3 pl-12 pr-4;
 }
 
 .pagefind-ui__result-nested {
-  @apply relative pl-4;
-
-  &::before {
-    @apply absolute bottom-0 left-0 h-[80%] w-[1px] bg-ctp-overlay1 content-[''];
-  }
+  @apply mt-[1px];
 }
 
-.pagefind-ui__button {
-  @apply mb-4;
+.pagefind-ui__result-nested,
+.pagefind-ui__result-title:not(:where(.pagefind-ui__result-nested *)) {
+  @apply relative bg-ctp-base py-3 pl-12 pr-4;
+}
+
+.pagefind-ui__result-title:not(:where(.pagefind-ui__result-nested *)):hover,
+.pagefind-ui__result-title:not(
+    :where(.pagefind-ui__result-nested *)
+  ):focus-within,
+.pagefind-ui__result-nested:hover,
+.pagefind-ui__result-nested:focus-within {
+  @apply outline outline-1 outline-ctp-lavender;
+}
+
+.pagefind-ui__result-inner > :first-child {
+  border-radius: 4px 4px 0 0;
+}
+.pagefind-ui__result-inner > :last-child {
+  border-radius: 0 0 4px 4px;
 }
 
 .pagefind-ui__result-link::after {
   content: "";
   position: absolute;
   inset: 0;
+}
+
+.pagefind-ui mark {
+  @apply bg-ctp-yellow;
+}
+
+.pagefind-ui__button {
+  @apply mt-4 w-full rounded border border-ctp-rosewater/25 bg-ctp-base p-1;
 }

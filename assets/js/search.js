@@ -1,60 +1,57 @@
 const modal = document.getElementById("searchModal");
 const searchBtn = document.getElementById("searchModalSearchBtn");
-const closeButton = document.getElementById("searchModalCloseBtn");
+// const closeButton = document.getElementById("searchModalCloseBtn");
 
 function showModal() {
-  // TODO: add a11y
-  modal.classList.remove("hidden");
+  modal.showModal();
   document.body.style.overflow = "hidden";
-  // document.body.style.top = `-${window.scrollY}px`;
   document.querySelector(".pagefind-ui__search-input").focus();
 }
 
 function hideModal() {
-  // TODO: add a11y
-  modal.classList.add("hidden");
+  modal.close();
   document.body.style.overflow = "auto";
-  // document.body.style.top = "";
 }
 
 function toggleModal() {
-  if (modal.classList.contains("hidden")) {
-    showModal();
-  } else {
-    hideModal();
-  }
+  modal.open ? hideModal() : showModal();
 }
 
 searchBtn.addEventListener("click", () => {
-  toggleModal();
+  showModal();
 });
 
-closeButton.addEventListener("click", () => {
-  hideModal();
-});
+// closeButton.addEventListener("click", () => {
+//   hideModal();
+// });
 
-window.onclick = (event) => {
-  if (event.target === modal) {
-    toggleModal();
+modal.addEventListener("click", (e) => {
+  const dialogDimensions = modal.getBoundingClientRect();
+  if (
+    e.clientX < dialogDimensions.left ||
+    e.clientX > dialogDimensions.right ||
+    e.clientY < dialogDimensions.top ||
+    e.clientY > dialogDimensions.bottom
+  ) {
+    hideModal();
   }
-};
+});
 
 window.addEventListener("keydown", (event) => {
   if (event.ctrlKey && event.key === "k") {
     event.preventDefault();
     toggleModal();
-  } else if (event.key === "Escape") {
-    hideModal();
   }
 });
 
 export default function initPagefind() {
-  new PagefindUI({
+  const search = new PagefindUI({
     element: "#search",
-    showSubResults: true,
+    resetStyles: true,
     showImages: false,
-    resetStyles: false,
+    showSubResults: true,
   });
 
   // showModal();
+  // search.triggerSearch("t");
 }
