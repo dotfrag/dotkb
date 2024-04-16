@@ -8,6 +8,12 @@ Add new content:
 hugo new content bash/test.md
 ```
 
+Index site with pagefind:
+
+```shell
+pnpm dlx pagefind --site public
+```
+
 Generate chroma stylesheet:
 
 ```shell
