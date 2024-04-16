@@ -20,7 +20,10 @@ module.exports = {
               color: "#89b4fa",
             },
             code: {
+              backgroundColor: theme("colors.ctp-surface0.DEFAULT"),
+              borderRadius: theme("borderRadius.DEFAULT"),
               color: theme("colors.ctp-mauve.DEFAULT"),
+              padding: theme("padding.1"),
             },
             "code::before": {
               content: '""',
