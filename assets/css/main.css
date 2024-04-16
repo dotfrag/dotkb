@@ -10,3 +10,16 @@
 /* * {
   outline: 1px solid theme(textColor.ctp-red.DEFAULT) !important;
 } */
+
+/* Force dark color mode */
+/* https://stackoverflow.com/a/74370265 */
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+@media (prefers-color-scheme: light) {
+  html {
+    color-scheme: dark;
+  }
+}
