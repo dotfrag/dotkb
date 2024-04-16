@@ -1,29 +1,30 @@
 {
-	"name": "dotkb",
-	"version": "1.0.0",
-	"description": "",
-	"main": "index.js",
-	"scripts": {
-		"dev": "concurrently npm:hugo npm:tw",
-		"hugo": "hugo server --buildDrafts --bind 0.0.0.0",
-		"tw": "tailwindcss -i ./assets/css/main.css -o ./public/css/main.css --watch",
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
-	"devDependencies": {
-		"@catppuccin/tailwindcss": "^0.1.6",
-		"@tailwindcss/typography": "^0.5.10",
-		"autoprefixer": "^10.4.19",
-		"concurrently": "^8.2.2",
-		"cssnano": "^6.1.1",
-		"postcss": "^8.4.38",
-		"postcss-cli": "^11.0.0",
-		"postcss-import": "^16.1.0",
-		"prettier": "^3.2.5",
-		"prettier-plugin-go-template": "^0.0.15",
-		"prettier-plugin-tailwindcss": "^0.5.12",
-		"tailwindcss": "^3.4.1"
-	}
+  "name": "dotkb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently npm:hugo npm:tw",
+    "hugo": "hugo server --buildDrafts --bind 0.0.0.0",
+    "tw": "tailwindcss -i ./assets/css/main.css -o ./public/css/main.css --watch",
+    "pf": "pnpm dlx pagefind --site public",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@catppuccin/tailwindcss": "^0.1.6",
+    "@tailwindcss/typography": "^0.5.12",
+    "autoprefixer": "^10.4.19",
+    "concurrently": "^8.2.2",
+    "cssnano": "^6.1.2",
+    "postcss": "^8.4.38",
+    "postcss-cli": "^11.0.0",
+    "postcss-import": "^16.1.0",
+    "prettier": "^3.2.5",
+    "prettier-plugin-go-template": "^0.0.15",
+    "prettier-plugin-tailwindcss": "^0.5.14",
+    "tailwindcss": "^3.4.3"
+  }
 }
