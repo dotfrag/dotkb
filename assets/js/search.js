@@ -10,7 +10,6 @@ function showModal() {
 
 function hideModal() {
   modal.close();
-  document.body.style.overflow = "auto";
 }
 
 function toggleModal() {
@@ -35,6 +34,10 @@ modal.addEventListener("click", (e) => {
   ) {
     hideModal();
   }
+});
+
+modal.addEventListener("close", () => {
+  document.body.style.overflow = "auto";
 });
 
 window.addEventListener("keydown", (event) => {
