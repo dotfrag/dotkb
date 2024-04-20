@@ -3,12 +3,12 @@
     {{ partial "breadcrumb.html" . }}
   {{- end }}
   <div class="flex justify-center gap-4">
-    <div class="prose prose-invert w-full max-w-none prose-h1:mb-2">
+    <div class="prose prose-invert w-full max-w-none prose-h1:mb-3">
       <h1>{{ .Title }}</h1>
       {{- if .Date }}
         {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
         {{ $dateHuman := .Date | time.Format ":date_long" }}
-        <div class="text-ctp-overlay1">
+        <div class="font-mono text-sm text-ctp-overlay1">
           <time datetime="{{ $dateMachine }}">
             {{ $dateHuman }}
           </time>
