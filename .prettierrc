@@ -8,6 +8,12 @@
         "goTemplateBracketSpacing": true,
         "bracketSameLine": true
       }
+    },
+    {
+      "files": ["*.md"],
+      "options": {
+        "proseWrap": "always"
+      }
     }
   ]
 }
