@@ -1,7 +1,7 @@
 <nav aria-label="breadcrumb" class="mb-6 font-mono text-sm text-ctp-overlay1">
   <ol>
     {{ range .Ancestors.Reverse }}
-      <li class="inline [&:not(:last-child)::after]:content-['/']">
+      <li class="inline [&:not(:last-child)::after]:content-['>']">
         <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
       </li>
     {{ end }}
