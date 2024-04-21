@@ -1,12 +1,13 @@
-{{ $size := .size | default "5" }}
+{{ $size := .size | default "20" }}
 <svg
-  class="h-{{ $size }} w-{{ $size }}"
   data-slot="icon"
   fill="none"
   stroke-width="1.5"
   stroke="currentColor"
   viewBox="0 0 24 24"
   xmlns="http://www.w3.org/2000/svg"
+  width="{{ $size }}px"
+  height="{{ $size }}px"
   aria-hidden="true">
   <path
     stroke-linecap="round"

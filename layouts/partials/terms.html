@@ -13,7 +13,7 @@
 {{- with $page.GetTerms $taxonomy }}
   {{- $label := (index . 0).Parent.LinkTitle }}
   <div class="mt-12 flex items-center gap-3">
-    {{ partial "svg/tag" (dict "size" "6") }}
+    {{ partial "svg/tag" (dict "size" 22) }}
     <ul class="not-prose flex gap-3">
       {{- range . }}
         <li>
