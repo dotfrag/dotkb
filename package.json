@@ -8,6 +8,7 @@
     "hugo": "hugo server --buildDrafts --bind 0.0.0.0",
     "tw": "tailwindcss -i ./assets/css/main.css -o ./public/css/main.css --watch",
     "pf": "pnpm dlx pagefind --site public",
+    "clean": "rm -rf public resources",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
