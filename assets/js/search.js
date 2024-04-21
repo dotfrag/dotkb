@@ -1,5 +1,5 @@
 const modal = document.getElementById("searchModal");
-const searchBtn = document.getElementById("searchModalSearchBtn");
+const searchBtn = document.querySelectorAll(".searchModalOpenBtn");
 // const closeButton = document.getElementById("searchModalCloseBtn");
 
 function showModal() {
@@ -16,9 +16,11 @@ function toggleModal() {
   modal.open ? hideModal() : showModal();
 }
 
-searchBtn.addEventListener("click", () => {
-  showModal();
-});
+for (const btn of searchBtn) {
+  btn.addEventListener("click", () => {
+    showModal();
+  });
+}
 
 // closeButton.addEventListener("click", () => {
 //   hideModal();
