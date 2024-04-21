@@ -17,16 +17,16 @@ pageRef = '/'
 weight = 10
 
 [[menus.main]]
-name = 'Index'
-pageRef = '/tree/'
+name = 'Explore'
+pageRef = '/explore'
 weight = 20
 
 [[menus.main]]
 name = 'Tags'
-pageRef = '/tags/'
+pageRef = '/tags'
 weight = 30
 
 [[menus.main]]
 name = 'About'
-pageRef = '/about/'
+pageRef = '/about'
 weight = 40
