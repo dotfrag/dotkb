@@ -24,10 +24,9 @@
     {{- $attrs := dict "href" .URL }}
     {{- $sharedClasses := "px-2 py-1.5 rounded" -}}
     {{- if $page.IsMenuCurrent .Menu . }}
-      {{- $attrs = merge $attrs (dict "class" (printf "%s bg-ctp-surface1" $sharedClasses) "aria-current" "page") }}
-      {{/* {{- else if $page.HasMenuCurrent .Menu . }}
-      {{- $attrs = merge $attrs (dict "class" (printf "%s ancestor" $sharedClasses) "aria-current" "true") }}
-      */}}
+      {{- $attrs = merge $attrs (dict "class" (printf "%s bg-ctp-surface0" $sharedClasses) "aria-current" "page") }}
+    {{- else if $page.HasMenuCurrent .Menu . }}
+      {{- $attrs = merge $attrs (dict "class" (printf "%s bg-red-500" $sharedClasses) "aria-current" "true") }}
     {{- else -}}
       {{- $attrs = merge $attrs (dict "class" (printf "%s hover:bg-ctp-surface1" $sharedClasses)) }}
     {{- end }}
