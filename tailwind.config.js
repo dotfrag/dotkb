@@ -53,7 +53,7 @@ module.exports = {
       // });
       addComponents({
         ".container": {
-          maxWidth: theme("maxWidth.5xl"),
+          maxWidth: theme("maxWidth.4xl"),
           marginLeft: theme("margin.auto"),
           marginRight: theme("margin.auto"),
           paddingLeft: theme("padding.4"),
