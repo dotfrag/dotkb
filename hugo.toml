@@ -17,8 +17,8 @@ pageRef = '/'
 weight = 10
 
 [[menus.main]]
-name = 'Bash'
-pageRef = '/bash'
+name = 'Index'
+pageRef = '/tree'
 weight = 20
 
 [[menus.main]]
