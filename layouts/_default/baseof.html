@@ -7,11 +7,11 @@
     {{ partial "head.html" . }}
   </head>
   <body
-    class="grid min-h-screen grid-rows-[auto_1fr_auto] bg-ctp-base text-ctp-text">
+    class="grid min-h-svh grid-rows-[auto_1fr_auto] bg-ctp-base text-ctp-text">
     {{ if not hugo.IsProduction }}
       {{ partial "tw-size-indicator.html" . }}
     {{ end }}
-    <header class="container mt-8 w-full">
+    <header class="container mt-4 w-full md:mt-8">
       {{ partial "header.html" . }}
     </header>
     <main
@@ -19,7 +19,7 @@
       {{ if eq .Kind "page" }}data-pagefind-body{{ end }}>
       {{ block "main" . }}{{ end }}
     </main>
-    <footer class="container my-8 w-full">
+    <footer class="container my-4 w-full md:my-8">
       {{ partial "footer.html" . }}
     </footer>
   </body>
