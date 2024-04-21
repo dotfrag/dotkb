@@ -25,7 +25,9 @@
                   class="inline-flex items-center gap-1"
                   href="{{ .RelPermalink }}">
                   {{ partial "svg/directory" }}
-                  <span class="text-lg text-ctp-peach">{{ .LinkTitle }}</span>
+                  <span class="text-lg text-ctp-peach">
+                    {{ .LinkTitle }}
+                  </span>
                 </a>
               </li>
             {{ end }}
@@ -35,7 +37,9 @@
                   class="inline-flex items-center gap-1"
                   href="{{ .RelPermalink }}">
                   {{ partial "svg/file" }}
-                  <span class="text-lg text-ctp-blue">{{ .LinkTitle }}</span>
+                  <span class="text-lg leading-5 text-ctp-blue">
+                    {{ .LinkTitle }}
+                  </span>
                 </a>
               </li>
             {{ end }}
