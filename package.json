@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "concurrently npm:hugo npm:tw",
-    "hugo": "hugo server --buildDrafts --bind 0.0.0.0",
-    "tw": "tailwindcss -i ./assets/css/main.css -o ./public/css/main.css --watch",
+    "dev": "pnpm clean && hugo -D && pnpm pf && pnpm parallel",
+    "parallel": "concurrently -c auto pnpm:dev:hugo pnpm:dev:tw",
+    "dev:hugo": "hugo server --buildDrafts --bind 0.0.0.0",
+    "dev:tw": "tailwindcss -i ./assets/css/main.css -o ./public/css/main.css --watch",
+    "build": "pnpm clean && hugo && pnpm pf",
     "pf": "pnpm dlx pagefind --site public",
     "clean": "rm -rf public resources",
     "test": "echo \"Error: no test specified\" && exit 1"
