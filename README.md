@@ -19,3 +19,10 @@ Generate chroma stylesheet:
 ```shell
 hugo gen chromastyles --style catppuccin-mocha | sed 's/1e1e2e/24273a/' > assets/css/chroma.css
 ```
+
+Bun git diff:
+
+```shell
+git config diff.lockb.textconv bun
+git config diff.lockb.binary true
+```
