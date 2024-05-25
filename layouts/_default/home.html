@@ -1,7 +1,7 @@
 {{ define "main" }}
   <div class="grid gap-8">
     {{/* TODO: banner */}}
-    <div>{{ .Content }}</div>
+    <div class="text-balance text-center *:m-4">{{ .Content }}</div>
     <div class="grid gap-4">
       {{ range where site.RegularPages "Params.post" "ne" "false" }}
         <div class="rounded bg-ctp-surface0 p-4 md:hover:bg-ctp-surface1">
