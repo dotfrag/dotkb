@@ -9,7 +9,9 @@
     <span class="ml-auto flex-none pl-3 text-xs font-semibold">Ctrl K</span>
   </button>
   {{ partial "searchModal.html" . }}
-  <button class="searchModalOpenBtn block md:hidden" aria-label="Search">
+  <button
+    class="searchModalOpenBtn ml-auto block lg:hidden"
+    aria-label="Search">
     {{ partial "svg/search" }}
   </button>
   {{/* TODO: responsive navbar */}}
