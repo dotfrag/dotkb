@@ -4,69 +4,82 @@
     <h1>{{ .Title }}</h1>
     {{ .Content }}
   </div>
-  <div class="mt-8 grid gap-4">
-    {{/* unfiled */}}
-    <div class="rounded-lg bg-ctp-surface0">
-      <ul class="space-y-4 p-4">
-        {{ range where .Pages.ByTitle ".Page.Kind" "ne" "section" }}
-          <li>
-            <a
-              class="inline-flex items-center gap-1"
-              href="{{ .RelPermalink }}">
-              {{ if eq .Page.Kind "term" }}
-                {{ partial "svg/tag" }}
-              {{ else }}
-                {{ partial "svg/file" }}
-              {{ end }}
-              <span class="text-lg leading-5 text-ctp-blue">
-                {{ .LinkTitle }}
-              </span>
-            </a>
-            <div class="ml-6">{{ .Summary }}</div>
-          </li>
-        {{ end }}
-      </ul>
+  {{ if eq .Page.Kind "taxonomy" }}
+    <div class="mt-8 flex gap-4">
+      {{ range .Pages }}
+        <a
+          class="rounded bg-ctp-mauve px-3 py-1 text-ctp-crust"
+          href="{{ .RelPermalink }}">
+          {{ .LinkTitle }}
+        </a>
+      {{ end }}
     </div>
-    {{/* subsections */}}
-    {{ range where .Pages.ByTitle ".Page.Kind" "eq" "section" }}
+  {{ else }}
+    <div class="mt-8 grid gap-4">
+      {{/* unfiled */}}
       <div class="rounded-lg bg-ctp-surface0">
-        <div class="flex items-center gap-1 border-b border-b-ctp-surface1 p-4">
-          {{ partial "svg/directory" }}
-          <h2>
-            <a
-              class="text-xl font-semibold text-ctp-peach"
-              href="{{ .RelPermalink }}">
-              {{ .LinkTitle }}
-            </a>
-          </h2>
-        </div>
         <ul class="space-y-4 p-4">
-          {{ range .Sections.ByTitle }}
-            <li>
-              <a
-                class="inline-flex items-center gap-1"
-                href="{{ .RelPermalink }}">
-                {{ partial "svg/directory" }}
-                <span class="text-lg text-ctp-peach">{{ .LinkTitle }}</span>
-              </a>
-              <div class="ml-6">{{ .Summary }}</div>
-            </li>
-          {{ end }}
-          {{ range .RegularPages.ByTitle }}
-            <li>
-              <a
-                class="inline-flex items-center gap-1"
-                href="{{ .RelPermalink }}">
-                {{ partial "svg/file" }}
-                <span class="text-lg leading-5 text-ctp-blue">
-                  {{ .LinkTitle }}
-                </span>
-              </a>
-              <div class="ml-6">{{ .Summary }}</div>
+          {{ range where .Pages.ByTitle ".Page.Kind" "ne" "section" }}
+            <li class="flex gap-2">
+              {{ partial "svg/file" (dict "class" "shrink-0") }}
+              <div>
+                <a
+                  class="inline-flex items-center gap-2"
+                  href="{{ .RelPermalink }}">
+                  <span class="text-lg leading-5 text-ctp-blue">
+                    {{ .LinkTitle }}
+                  </span>
+                </a>
+                <div>{{ .Summary }}</div>
+              </div>
             </li>
           {{ end }}
         </ul>
       </div>
-    {{ end }}
-  </div>
+      {{/* subsections */}}
+      {{ range where .Pages.ByTitle ".Page.Kind" "eq" "section" }}
+        <div class="rounded-lg bg-ctp-surface0">
+          <div
+            class="flex items-center gap-2 border-b border-b-ctp-surface1 p-4">
+            {{ partial "svg/directory" (dict "class" "shrink-0") }}
+            <h2>
+              <a
+                class="text-xl font-semibold text-ctp-peach"
+                href="{{ .RelPermalink }}">
+                {{ .LinkTitle }}
+              </a>
+            </h2>
+          </div>
+          <ul class="space-y-4 p-4">
+            {{ range .Sections.ByTitle }}
+              <li>
+                <a
+                  class="inline-flex items-center gap-2"
+                  href="{{ .RelPermalink }}">
+                  {{ partial "svg/directory" }}
+                  <span class="text-lg text-ctp-peach">{{ .LinkTitle }}</span>
+                </a>
+                <div class="ml-6">{{ .Summary }}</div>
+              </li>
+            {{ end }}
+            {{ range .RegularPages.ByTitle }}
+              <li class="flex gap-2">
+                {{ partial "svg/file" (dict "class" "shrink-0") }}
+                <div>
+                  <a
+                    class="inline-flex items-center gap-2"
+                    href="{{ .RelPermalink }}">
+                    <span class="text-lg leading-5 text-ctp-blue">
+                      {{ .LinkTitle }}
+                    </span>
+                  </a>
+                  <div>{{ .Summary }}</div>
+                </div>
+              </li>
+            {{ end }}
+          </ul>
+        </div>
+      {{ end }}
+    </div>
+  {{ end }}
 {{ end }}
