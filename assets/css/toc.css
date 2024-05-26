@@ -1,3 +1,9 @@
-#TableOfContents ul ul {
-  @apply pl-3;
+#TableOfContents {
+  a {
+    @apply md:hover:text-ctp-maroon;
+  }
+
+  ul ul {
+    @apply pl-3;
+  }
 }
