@@ -2,7 +2,8 @@
 title = 'Home'
 +++
 
-Hi, I'm dotfrag, a Linux enthusiast currently working as a DevOps engineer.
+Hello, friend! I'm dotfrag, a Linux enthusiast currently working as a DevOps
+engineer.
 
 I created this site to write about the things I'm learning and want to remember
 in the future. It is a hybrid between a blog and a personal knowledge base.

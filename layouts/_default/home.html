@@ -1,7 +1,10 @@
 {{ define "main" }}
   <div class="grid gap-8">
     {{/* TODO: banner */}}
-    <div class="text-balance text-center *:m-4">{{ .Content }}</div>
+    <div class="grid gap-4 text-balance text-center">
+      <h1 class="text-xl font-semibold">dotfrag's knowledge base</h1>
+      {{ .Content }}
+    </div>
     <div class="grid gap-4">
       {{ range where site.RegularPages "Params.post" "ne" "false" }}
         <div class="rounded bg-ctp-surface0 p-4 md:hover:bg-ctp-surface1">
@@ -10,7 +13,7 @@
               <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
             </h2>
             <time
-              class="ml-auto text-ctp-overlay2"
+              class="ml-auto shrink-0 text-ctp-overlay2"
               datetime="{{ .Date | time.Format "2006-01-02T15:04:05-07:00" }}"
               >{{ .Date | time.Format ":date_long" }}</time
             >
@@ -22,9 +25,9 @@
     <div class="mx-auto mb-4">
       <a
         class="rounded bg-ctp-surface0 px-3 py-2 md:hover:bg-ctp-surface1"
-        href="/explore/">
-        Browse Index
-      </a>
+        href="/explore/"
+        >Browse Index</a
+      >
     </div>
   </div>
 {{ end }}
