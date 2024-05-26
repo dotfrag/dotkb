@@ -45,15 +45,10 @@ module.exports = {
       defaultFlavour: "mocha",
     }),
     require("@tailwindcss/typography"),
-    ({ addBase, addComponents, theme }) => {
-      // addBase({
-      //   html: {
-      //     fontSize: "18px",
-      //   },
-      // });
+    ({ addComponents, theme }) => {
       addComponents({
         ".container": {
-          maxWidth: theme("maxWidth.5xl"),
+          maxWidth: theme("maxWidth.4xl"),
           marginLeft: theme("margin.auto"),
           marginRight: theme("margin.auto"),
           paddingLeft: theme("padding.4"),
