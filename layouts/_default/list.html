@@ -21,7 +21,7 @@
         <ul class="space-y-4 p-4">
           {{ range where .Pages.ByTitle ".Page.Kind" "ne" "section" }}
             <li class="flex gap-2">
-              {{ partial "svg/file" (dict "class" "shrink-0") }}
+              {{ partial "svg/file" (dict "class" "shrink-0 mt-[3px]") }}
               <div>
                 <a
                   class="inline-flex items-center gap-2"
@@ -64,7 +64,7 @@
             {{ end }}
             {{ range .RegularPages.ByTitle }}
               <li class="flex gap-2">
-                {{ partial "svg/file" (dict "class" "shrink-0") }}
+                {{ partial "svg/file" (dict "class" "shrink-0 mt-[3px]") }}
                 <div>
                   <a
                     class="inline-flex items-center gap-2"
