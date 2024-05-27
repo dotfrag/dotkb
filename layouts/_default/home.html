@@ -6,7 +6,7 @@
       {{ .Content }}
     </div>
     <div class="grid gap-4">
-      {{ range where site.RegularPages "Params.post" "ne" "false" }}
+      {{ range (.Paginate (where site.RegularPages "Params.post" "ne" "false")).Pages }}
         <div class="rounded bg-ctp-surface0 p-4 md:hover:bg-ctp-surface1">
           <div class="flex">
             <h2 class="text-xl font-bold text-ctp-blue">
@@ -22,12 +22,6 @@
         </div>
       {{ end }}
     </div>
-    <div class="mx-auto mb-4">
-      <a
-        class="rounded bg-ctp-surface0 px-3 py-2 md:hover:bg-ctp-surface1"
-        href="/explore/"
-        >Browse Index</a
-      >
-    </div>
+    {{ partial "pagination" . }}
   </div>
 {{ end }}
