@@ -1,26 +1,36 @@
 # dotkb
 
+My personal knowledge base, hosted at <https://www.dotkb.net/>.
+
 ## Useful commands
 
-Add new content:
+### Add new content
 
 ```shell
-hugo new content bash/test.md
+hugo new content bash/file.md
 ```
 
-Index site with pagefind:
+### Index site with pagefind
 
 ```shell
-pnpm dlx pagefind --site public
+bunx pagefind --site public
 ```
 
-Generate chroma stylesheet:
+### Generate chroma stylesheet
 
 ```shell
 hugo gen chromastyles --style catppuccin-mocha | sed 's/1e1e2e/24273a/' > assets/css/chroma.css
 ```
 
-Bun git diff:
+### Bun git diff
+
+Run this to use the local `.gitconfig` file:
+
+```shell
+git config --local include.path ../.gitconfig
+```
+
+Otherwise, apply manually:
 
 ```shell
 git config diff.lockb.textconv bun
