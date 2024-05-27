@@ -18,6 +18,7 @@ Technologies used:
 
 - [Hugo](https://gohugo.io/) (Static-Site Generator)
 - [Tailwind CSS](https://tailwindcss.com/) (CSS Styling)
+- [Catppuccin](https://github.com/catppuccin/tailwindcss) (CSS Color Theme)
 - [Pagefind](https://pagefind.app/) (Static Search Library)
 - [Bun](https://bun.sh/) (JavaScript Toolkit)
 - [Cloudflare Pages](https://pages.cloudflare.com/) (Hosting)
