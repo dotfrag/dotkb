@@ -9,7 +9,7 @@
     "dev:hugo": "hugo server --buildDrafts --bind 0.0.0.0",
     "dev:tw": "tailwindcss -i ./assets/css/main.css -o ./public/css/main.css --watch",
     "build": "bun clean && hugo && bun pf",
-    "pf": "bunx pagefind --site public",
+    "pf": "pagefind --site public",
     "clean": "rm -rf public resources",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -23,6 +23,7 @@
     "autoprefixer": "^10.4.19",
     "concurrently": "^8.2.2",
     "cssnano": "^6.1.2",
+    "pagefind": "^1.1.0",
     "postcss": "^8.4.38",
     "postcss-cli": "^11.0.0",
     "postcss-import": "^16.1.0",
