@@ -11,9 +11,28 @@
 {{- $menuID := .menuID }}
 
 {{- with index site.Menus $menuID }}
-  <nav>
-    <ul class="flex gap-2">
+  <nav class="flex">
+    <button
+      type="button"
+      aria-controls="nav-menu"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+      class="z-50 md:hidden">
+      <span class="sr-only">Toggle navigation</span>
+      {{ partial "svg/bars" }}
+    </button>
+    <ul
+      class="flex gap-2 tracking-wide max-md:fixed max-md:inset-[0_0_0_60vw] max-md:z-40 max-md:translate-x-full max-md:touch-none max-md:flex-col max-md:items-end max-md:gap-4 max-md:bg-ctp-mantle max-md:p-4 max-md:pt-20 max-md:uppercase max-md:shadow-xl max-md:backdrop-blur max-md:transition max-sm:inset-[0_0_0_50vw]"
+      id="nav-menu">
       {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
+      <!-- <li class="md:hidden"> -->
+      <!--   <a -->
+      <!--     href="https://github.com/dotfrag/dotkb" -->
+      <!--     target="_blank" -->
+      <!--     rel="noreferrer noopener"> -->
+      <!--     {{ partial "svg/github" (dict "size" 20) }} -->
+      <!--   </a> -->
+      <!-- </li> -->
     </ul>
   </nav>
 {{- end }}
@@ -24,7 +43,7 @@
     {{- $attrs := dict "href" .URL }}
     {{- $sharedClasses := "px-2 py-1.5 rounded" -}}
     {{- if $page.IsMenuCurrent .Menu . }}
-      {{- $attrs = merge $attrs (dict "class" (printf "%s bg-ctp-surface0" $sharedClasses) "aria-current" "page") }}
+      {{- $attrs = merge $attrs (dict "class" (printf "%s max-md:font-extrabold md:bg-ctp-surface0" $sharedClasses) "aria-current" "page") }}
     {{- else if $page.HasMenuCurrent .Menu . }}
       {{- $attrs = merge $attrs (dict "class" (printf "%s bg-red-500" $sharedClasses) "aria-current" "true") }}
     {{- else -}}

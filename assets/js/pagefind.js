@@ -1,7 +1,7 @@
 import { Input, Instance, ResultList, Summary } from "@pagefind/modular-ui";
 
 const modal = document.getElementById("searchModal");
-const searchBtn = document.querySelectorAll(".searchModalOpenBtn");
+const modalOpenBtns = document.querySelectorAll("[data-modal-open]");
 // const closeButton = document.getElementById("searchModalCloseBtn");
 
 function showModal() {
@@ -18,7 +18,7 @@ function toggleModal() {
   modal.open ? hideModal() : showModal();
 }
 
-for (const btn of searchBtn) {
+for (const btn of modalOpenBtns) {
   btn.addEventListener("click", () => {
     showModal();
   });

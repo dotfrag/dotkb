@@ -2,19 +2,19 @@
   <a class="text-2xl font-bold" href="/">{{ site.Title }}</a>
   <button
     type="button"
-    class="searchModalOpenBtn hidden w-52 items-center rounded-md bg-ctp-surface0 py-1.5 pl-2 pr-3 text-sm text-ctp-subtext0 ring-1 ring-ctp-lavender/15 hover:bg-ctp-surface1 hover:ring-ctp-lavender lg:flex"
-    data-open-modal>
+    class="hidden w-52 items-center rounded-md bg-ctp-surface0 py-1.5 pl-2 pr-3 text-sm text-ctp-subtext0 ring-1 ring-ctp-lavender/15 hover:bg-ctp-surface1 hover:ring-ctp-lavender md:flex"
+    data-modal-open>
     {{ partial "svg/search" }}
-    Search
+    <span class="ml-1">Search</span>
     <span class="ml-auto flex-none pl-3 text-xs font-semibold">Ctrl K</span>
   </button>
   {{ partial "searchModal.html" . }}
   <button
-    class="searchModalOpenBtn ml-auto block lg:hidden"
-    aria-label="Search">
+    class="ml-auto mr-4 block md:hidden"
+    aria-label="Search"
+    data-modal-open>
     {{ partial "svg/search" }}
   </button>
-  {{/* TODO: responsive navbar */}}
   {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
 </div>
 {{/* TODO: remove divider in favour of landing banner */}}
