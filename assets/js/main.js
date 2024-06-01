@@ -1,7 +1,7 @@
 import codeCopy from "./codeCopy";
-import initPagefind from "./search";
+import initPagefindInstance from "./pagefind";
 
 window.addEventListener("DOMContentLoaded", () => {
-  initPagefind();
+  initPagefindInstance();
   codeCopy();
 });

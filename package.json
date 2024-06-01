@@ -18,6 +18,7 @@
   "license": "ISC",
   "devDependencies": {
     "@catppuccin/tailwindcss": "^0.1.6",
+    "@pagefind/modular-ui": "^1.1.0",
     "@tailwindcss/typography": "^0.5.13",
     "autoprefixer": "^10.4.19",
     "concurrently": "^8.2.2",

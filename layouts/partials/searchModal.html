@@ -2,13 +2,11 @@
   id="searchModal"
   class="mx-auto mt-16 max-h-[calc(100%-8rem)] min-h-60 w-full max-w-[90%] rounded border border-ctp-lavender/50 bg-ctp-surface0 text-ctp-text shadow-lg backdrop:backdrop-blur-sm md:max-w-2xl"
   data-modal>
-  {{/* <div class="relative p-4"> */}}
-  <div id="search" class="relative p-4"></div>
-  {{/* <button
-    id="searchModalCloseBtn"
-    class="absolute right-4 top-4 rounded-lg bg-ctp-surface1 px-2 py-1 font-mono text-xs tracking-tight">
-    ESC
-    </button>
-  */}}
-  {{/* </div> */}}
+  <div class="grid gap-4 p-4">
+    <div id="search-input-container">
+      <input id="search-input" type="text" placeholder="Search" />
+    </div>
+    <div id="search-summary" class="text-ctp-subtext1"></div>
+    <ul id="search-results" class="grid gap-4"></ul>
+  </div>
 </dialog>
