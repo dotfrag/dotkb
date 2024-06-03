@@ -2,6 +2,7 @@ baseURL = 'https://www.dotkb.net/'
 languageCode = 'en-us'
 title = 'dotkb'
 enableGitInfo = true
+enableRobotsTXT = true
 
 [frontmatter]
 lastmod = ['lastmod', ':git', 'modified', 'date', 'publishDate']
