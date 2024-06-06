@@ -1,0 +1,16 @@
+<!-- Canonical URL -->
+<link rel="canonical" href="{{ .Permalink }}" />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ .Permalink }}" />
+<meta property="og:title" content="{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Page.Title}}{{ end }}" />
+<meta property="og:description" content="dotfrag's knowledge base" />
+<!-- <meta property="og:image" content="{new" URL(image, Astro.url)} /> -->
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content="{{ .Permalink }}" />
+<meta property="twitter:title" content="{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Page.Title}}{{ end }}" />
+<meta property="twitter:description" content="dotfrag's knowledge base" />
+<!-- <meta property="twitter:image" content="{new" URL(image, Astro.url)} /> -->
