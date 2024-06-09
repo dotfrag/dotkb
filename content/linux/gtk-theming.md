@@ -1,5 +1,5 @@
 +++
-title = 'Gnome/GTK Theming'
+title = 'GTK Theming'
 date = 2024-06-09T12:33:43+00:00
 toc = false
 summary = false
@@ -37,3 +37,30 @@ Set fonts for GTK applications:
 gsettings set org.gnome.desktop.interface font-name 'Open Sans 11'
 gsettings set org.gnome.desktop.interface monospace-font-name 'Iosevka SS08 11'
 ```
+
+### Wayland
+
+If you are on Wayland, it can be helpful to also set the settings in
+`~/.config/gtk-3.0/settings.ini`, here's an example:
+
+```init
+[Settings]
+gtk-theme-name = catppuccin-macchiato-blue-standard+default
+gtk-application-prefer-dark-theme = true
+gtk-cursor-theme-name = catppuccin-macchiato-dark-cursors
+gtk-icon-theme-name = Papirus
+gtk-font-name = 'Open Sans 11'
+```
+
+If you are on sway, you might also need to configure the cursor theme in sway
+config:
+
+```text
+seat seat0 xcursor_theme 'catppuccin-macchiato-dark-cursors'
+```
+
+## Sources
+
+<https://wiki.archlinux.org/title/Cursor_themes#XDG_specification>
+<https://github.com/swaywm/sway/wiki/GTK-3-settings-on-Wayland>
+<https://www.reddit.com/r/swaywm/comments/qq74gv/comment/hjzhoyo/>
