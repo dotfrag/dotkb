@@ -88,7 +88,10 @@ export default function initPagefindInstance() {
           for (const subResult of subResults.slice(1)) {
             const title = subResult.title;
             const re = new RegExp(String.raw`${title}.?\s?`);
-            const excerpt = subResult.excerpt.replace(re, "").substring(0, 100);
+            const excerpt = subResult.excerpt
+              .replace(/(<([^>]+)>)/gi, "")
+              .replace(re, "")
+              .substring(0, 100);
 
             wrapper.innerHTML += `<a href="${subResult.url}">
             <span>${title}</span>
