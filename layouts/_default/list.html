@@ -17,25 +17,28 @@
   {{ else }}
     <div class="mt-8 grid gap-4">
       {{/* unfiled */}}
-      <div class="rounded-lg bg-ctp-surface0">
-        <ul class="space-y-4 p-4">
-          {{ range where .Pages.ByTitle ".Page.Kind" "ne" "section" }}
-            <li class="flex gap-2">
-              {{ partial "svg/file" (dict "class" "shrink-0 mt-[3px]") }}
-              <div>
-                <a
-                  class="inline-flex items-center gap-2"
-                  href="{{ .RelPermalink }}">
-                  <span class="text-lg leading-5 text-ctp-blue">
-                    {{ .LinkTitle }}
-                  </span>
-                </a>
-                <div>{{ .Summary }}</div>
-              </div>
-            </li>
-          {{ end }}
-        </ul>
-      </div>
+      {{ $unfiled := where .Pages.ByTitle ".Page.Kind" "ne" "section" }}
+      {{ if gt (len $unfiled) 0 }}
+        <div class="rounded-lg bg-ctp-surface0">
+          <ul class="space-y-4 p-4">
+            {{ range $unfiled }}
+              <li class="flex gap-2">
+                {{ partial "svg/file" (dict "class" "shrink-0 mt-[3px]") }}
+                <div>
+                  <a
+                    class="inline-flex items-center gap-2"
+                    href="{{ .RelPermalink }}">
+                    <span class="text-lg leading-5 text-ctp-blue">
+                      {{ .LinkTitle }}
+                    </span>
+                  </a>
+                  {{ if ne .Summary "false" }}<div>{{ .Summary }}</div>{{ end }}
+                </div>
+              </li>
+            {{ end }}
+          </ul>
+        </div>
+      {{ end }}
       {{/* subsections */}}
       {{ range where .Pages.ByTitle ".Page.Kind" "eq" "section" }}
         <div class="rounded-lg bg-ctp-surface0">
@@ -73,7 +76,7 @@
                       {{ .LinkTitle }}
                     </span>
                   </a>
-                  <div>{{ .Summary }}</div>
+                  {{ if ne .Summary "false" }}<div>{{ .Summary }}</div>{{ end }}
                 </div>
               </li>
             {{ end }}

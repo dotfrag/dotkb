@@ -1,5 +1,5 @@
 {{ define "main" }}
-  {{- if not (eq .Params.breadcrumb false) }}
+  {{- if ne .Params.breadcrumb false }}
     {{ partial "breadcrumb.html" . }}
   {{- end }}
   <div class="flex justify-center gap-4">
@@ -26,7 +26,7 @@
           {{- end }}
         </div>
       {{- end }}
-      {{- if not (eq .Params.toc false) }}
+      {{- if ne .Params.toc false }}
         <div class="not-prose my-8 md:hidden">
           {{ partial "toc.html" . }}
         </div>
@@ -34,7 +34,7 @@
       {{ .Content }}
       {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
     </div>
-    {{- if not (eq .Params.toc false) }}
+    {{- if ne .Params.toc false }}
       <div class="hidden shrink-0 md:block">
         <aside class="sticky top-8 border-l-2 border-ctp-sapphire pl-2">
           {{ partial "toc.html" . }}

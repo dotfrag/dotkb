@@ -17,7 +17,7 @@
               >{{ .Date | time.Format ":date_long" }}</time
             >
           </div>
-          <div>{{ .Summary }}</div>
+          {{ if ne .Summary "false" }}<div>{{ .Summary }}</div>{{ end }}
         </div>
       {{ end }}
     </div>
