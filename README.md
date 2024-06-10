@@ -13,7 +13,7 @@ hugo new content bash/file.md
 ### Index site with pagefind
 
 ```shell
-bunx pagefind --site public
+bun pagefind --site public
 ```
 
 ### Generate chroma stylesheet
