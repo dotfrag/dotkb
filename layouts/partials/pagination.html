@@ -7,7 +7,7 @@
 {{- end }}
 
 {{- define "partials/inline/pagination" }}
-  {{- $sharedClasses := "rounded bg-ctp-surface0 px-2 md:hover:bg-ctp-surface1" }}
+  {{- $sharedClasses := "rounded bg-ctp-surface0 md:hover:bg-ctp-surface1" }}
 
   {{- with .Paginator }}
     {{- $currentPageNumber := .PageNumber }}
@@ -16,14 +16,16 @@
       <a
         href="{{ .URL }}"
         aria-label="Previous"
-        class="{{ $sharedClasses }} py-1"
+        class="{{ $sharedClasses }} px-2 py-1"
         role="button"
         ><span aria-hidden="true">{{ partial "svg/arrow-left" }}</span></a
       >
     {{- end }}
 
 
-    <a class="{{ $sharedClasses }} py-2 text-lg font-semibold" href="/explore/"
+    <a
+      class="{{ $sharedClasses }} px-4 py-2 text-lg font-semibold"
+      href="/explore/"
       >Browse Index</a
     >
 
@@ -31,7 +33,7 @@
       <a
         href="{{ .URL }}"
         aria-label="Next"
-        class="{{ $sharedClasses }} py-1"
+        class="{{ $sharedClasses }} px-2 py-1"
         role="button"
         ><span aria-hidden="true">{{ partial "svg/arrow-right" }}</span></a
       >
