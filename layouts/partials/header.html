@@ -1,14 +1,16 @@
 <div class="flex items-center justify-between">
-  <a class="text-2xl font-bold" href="/">{{ site.Title }}</a>
-  <button
-    type="button"
-    class="hidden w-52 items-center rounded-md bg-ctp-surface0 py-1.5 pl-2 pr-3 text-sm text-ctp-subtext0 ring-1 ring-ctp-lavender/15 hover:bg-ctp-surface1 hover:ring-ctp-lavender md:flex"
-    data-modal-open>
-    {{ partial "svg/search" }}
-    <span class="ml-1">Search</span>
-    <span class="ml-auto flex-none pl-3 text-xs font-semibold">Ctrl K</span>
-  </button>
-  {{ partial "searchModal.html" . }}
+  <div class="flex items-center justify-center gap-5">
+    <a class="text-3xl font-bold" href="/">{{ site.Title }}</a>
+    <button
+      type="button"
+      class="hidden w-48 items-center rounded-md bg-ctp-surface0 py-1.5 pl-2 pr-3 text-sm text-ctp-subtext0 ring-1 ring-ctp-lavender/15 hover:bg-ctp-surface1 hover:ring-ctp-lavender md:flex"
+      data-modal-open>
+      {{ partial "svg/search" (dict "size" 20) }}
+      <span class="ml-1">Search</span>
+      <span class="ml-auto flex-none pl-3 text-xs font-semibold">Ctrl K</span>
+    </button>
+    {{ partial "searchModal.html" . }}
+  </div>
   <button
     class="ml-auto mr-4 block md:hidden"
     aria-label="Search"
