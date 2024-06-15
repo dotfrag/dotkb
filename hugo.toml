@@ -23,11 +23,16 @@ pageRef = '/explore'
 weight = 20
 
 [[menus.main]]
+name = 'Tools'
+pageRef = '/tools'
+weight = 30
+
+[[menus.main]]
 name = 'Tags'
 pageRef = '/tags'
-weight = 30
+weight = 40
 
 [[menus.main]]
 name = 'About'
 pageRef = '/about'
-weight = 40
+weight = 50
