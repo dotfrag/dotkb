@@ -1,6 +1,6 @@
 #TableOfContents {
   a {
-    @apply md:hover:text-ctp-maroon;
+    @apply block md:hover:text-ctp-maroon;
   }
 
   ul ul {
