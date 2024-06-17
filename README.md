@@ -1,6 +1,6 @@
 # dotkb
 
-My personal knowledge base, hosted at <https://www.dotkb.net/>.
+My personal knowledge base, hosted at <https://kb.dotfrag.com/>.
 
 ## Useful commands
 

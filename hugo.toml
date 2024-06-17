@@ -1,4 +1,4 @@
-baseURL = 'https://www.dotkb.net/'
+baseURL = 'https://kb.dotfrag.com/'
 languageCode = 'en-us'
 title = 'dotkb'
 enableGitInfo = true
