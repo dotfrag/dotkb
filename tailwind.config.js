@@ -18,6 +18,7 @@ module.exports = {
             },
             a: {
               color: "#89b4fa",
+              wordBreak: "break-all",
             },
             code: {
               backgroundColor: theme("colors.ctp-surface0.DEFAULT"),
