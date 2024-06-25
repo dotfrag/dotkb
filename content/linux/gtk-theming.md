@@ -15,6 +15,8 @@ The common directories used by GTK for theming are:
 | `/usr/share/icons`, `~/.local/share/icons`   | Icon and cursor themes |
 | `~/.icons`                                   | Cursor themes          |
 
+### Cursors
+
 For cursors, you can use the `~/.icons` directory without any additional setup.
 If you want to use the `~/.local/share/icons` directory, you might need to set
 the `XCURSORS_PATH` environment variable like so:
@@ -65,6 +67,16 @@ config:
 
 ```text
 seat seat0 xcursor_theme 'catppuccin-macchiato-dark-cursors'
+```
+
+### Qt-based applications and cursors
+
+For cursor icons to work in Qt-based applications, modify the file
+`/usr/share/icons/default/index.theme` accordingly:
+
+```ini
+[Icon Theme]
+Inherits=catppuccin-macchiato-dark-cursors
 ```
 
 ## Sources
