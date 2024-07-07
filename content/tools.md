@@ -64,6 +64,18 @@ am actively using and marked with 🌟 are my favorites.
 - [vhs](https://github.com/charmbracelet/vhs): CLI home video recorder
 - [zellij](https://github.com/zellij-org/zellij): Terminal multiplexer
 
+## TUI file managers
+
+- ⭐ [lf](https://github.com/gokcehan/lf): Terminal file manager
+- ⭐ [yazi](https://github.com/sxyazi/yazi): Blazing fast terminal file manager
+
+- [joshuto](https://github.com/kamiyaa/joshuto): ranger-like terminal file
+  manager written in Rust
+- [ranger](https://github.com/ranger/ranger): A VIM-inspired filemanager for the
+  console
+- [xplr](https://github.com/sayanarijit/xplr): A hackable, minimal, fast TUI
+  file explorer
+
 ## Terminal previewers
 
 - [chafa](https://github.com/hpjansson/chafa)
@@ -77,8 +89,6 @@ am actively using and marked with 🌟 are my favorites.
 
 - ⭐ [delta](https://github.com/dandavison/delta): A syntax-highlighting pager
   for git, diff, and grep output git commands
-- ⭐ [lf](https://github.com/gokcehan/lf): Terminal file manager
-- ⭐ [yazi](https://github.com/sxyazi/yazi): Blazing fast terminal file manager
 
 - [better-commits](https://github.com/Everduin94/better-commits): CLI for
   writing better commits
