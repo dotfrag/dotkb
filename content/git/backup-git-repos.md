@@ -3,7 +3,6 @@ title = 'Backup git repositories'
 date = 2024-07-07T08:27:52+00:00
 toc = false
 summary = false
-draft = true
 +++
 
 ## Overview
