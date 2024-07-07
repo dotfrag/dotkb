@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# shellcheck disable=SC2034
+COMMIT_MSG_FILE=$1
+COMMIT_SOURCE=$2
+SHA1=$3
+
+staged_files=$(git diff --cached --name-only)
+
+if [[ $(echo "${staged_files}" | wc -l) -gt 1 ]] ||
+  ! grep -q '^content' <<<"${staged_files}"; then
+  exit 0
+fi
+
+f=${staged_files##*/}
+f=${f%.md}
+action=""
+
+# file is added
+if ! git diff --cached --quiet --diff-filter=A; then
+  action="add"
+fi
+
+# file is modified
+if ! git diff --cached --quiet --diff-filter=M; then
+  action="update"
+fi
+
+sed -i "1s/.*/${action} ${f} post/" "${COMMIT_MSG_FILE}"
