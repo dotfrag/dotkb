@@ -3,7 +3,6 @@ title = 'Change visudo editor'
 date = 2024-06-09T12:29:57+00:00
 toc = false
 summary = false
-draft = true
 +++
 
 ```shell
