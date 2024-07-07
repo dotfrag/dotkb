@@ -3,7 +3,6 @@ title = 'Safe Scripts (Strict Mode)'
 date = 2024-06-09T12:12:05+00:00
 toc = false
 summary = false
-draft = true
 +++
 
 ## Overview
@@ -26,7 +25,26 @@ set -Eeuo pipefail
 
 ## Explanation
 
-<!--TODO: add explanation-->
+### `set -e`
+
+The `-e` option makes the script exit as soon as a command returns a non-zero
+exit code.
+
+### `set -u`
+
+The `-u` option makes the script exit as soon as a variable is used before being
+set.
+
+### `set -o pipefail`
+
+The `-o pipefail` option makes the script exit as soon as a command in a
+pipeline fails.
+
+### `set -E`
+
+When using `-e` without, the script will exit as soon as a command fails, but it
+will not trigger the ERR trap when that happens. Setting `-E` prevents this
+behavior from happening, and will trigger the ERR trap as well.
 
 ## Bonus
 
