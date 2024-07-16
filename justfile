@@ -6,3 +6,6 @@ chroma:
 
 gitconfig:
   git config --local include.path ../.gitconfig
+
+update:
+  bun update && bun install
