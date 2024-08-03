@@ -8,4 +8,4 @@ gitconfig:
   git config --local include.path ../.gitconfig
 
 update:
-  bun update && bun install
+  bun update && git diff --quiet || bun install
