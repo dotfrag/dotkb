@@ -19,17 +19,17 @@
   "devDependencies": {
     "@catppuccin/tailwindcss": "^0.1.6",
     "@pagefind/modular-ui": "^1.1.0",
-    "@tailwindcss/typography": "^0.5.13",
+    "@tailwindcss/typography": "^0.5.14",
     "autoprefixer": "^10.4.20",
     "concurrently": "^8.2.2",
     "cssnano": "^6.1.2",
     "pagefind": "^1.1.0",
-    "postcss": "^8.4.40",
+    "postcss": "^8.4.41",
     "postcss-cli": "^11.0.0",
     "postcss-import": "^16.1.0",
     "prettier": "^3.3.3",
     "prettier-plugin-go-template": "^0.0.15",
     "prettier-plugin-tailwindcss": "^0.5.14",
-    "tailwindcss": "^3.4.7"
+    "tailwindcss": "^3.4.9"
   }
 }
