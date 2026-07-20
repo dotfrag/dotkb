@@ -4,6 +4,7 @@ import { Icon } from "astro-icon/components";
 
 <template id="copy-button">
 	<button
+		data-name="code-copy-button"
 		type="button"
 		class="grid-template-stack bg-base/75 border-subtext-1/50 hover:border-subtext-1/75 hover:bg-surface-1/75 group/icon absolute top-3 right-3 grid cursor-pointer rounded-md border p-1 group-hover:grid lg:hidden"
 	>
@@ -36,13 +37,20 @@ import { Icon } from "astro-icon/components";
 
 		wrapper?.lastElementChild?.addEventListener("click", async (e) => {
 			const pre = (e.target as HTMLElement).closest(".group");
+			const btn = wrapper?.querySelector(
+				'[data-name="code-copy-button"]',
+			) as HTMLButtonElement;
 			const copyBtn = wrapper?.querySelector('[data-icon="code-copy"]');
 			const copiedBtn = wrapper?.querySelector('[data-icon="code-copied"]');
 			const code = pre?.querySelector("code")?.textContent?.replace(/\n$/, "");
 			await navigator.clipboard.writeText(code!);
+			btn.classList.remove("border-subtext-1/50", "hover:border-subtext-1/75");
+			btn.classList.add("border-green/50", "hover:border-green/75");
 			copyBtn?.classList.add("hidden");
 			copiedBtn?.classList.remove("hidden");
 			setTimeout(() => {
+				btn.classList.remove("border-green/50", "hover:border-green/75");
+				btn.classList.add("border-subtext/50", "hover:border-subtext-1/75");
 				copiedBtn?.classList.add("hidden");
 				copyBtn?.classList.remove("hidden");
 			}, 1500);
