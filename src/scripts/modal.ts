@@ -14,7 +14,11 @@ function hideModal() {
 }
 
 function toggleModal() {
-  modal.open ? hideModal() : showModal();
+  if (modal.open) {
+    hideModal();
+  } else {
+    showModal();
+  }
 }
 
 for (const btn of modalOpenBtns) {
