@@ -2,7 +2,7 @@
 
 staged_files=$(
   git diff --name-only --staged \
-    | rg '\.(astro|css|js|json|md|mdx|mjs|ts)$' \
+    | rg '\.(astro|css)$' \
     | paste -sd ' '
 )
 
@@ -14,3 +14,5 @@ fi
 if pnpm prettier --write ${staged_files}; then
   git add ${staged_files}
 fi
+
+vp check --fix
