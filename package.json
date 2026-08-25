@@ -21,7 +21,7 @@
     "@pagefind/modular-ui": "^1.5.2",
     "@tailwindcss/vite": "^4.3.3",
     "astro": "^5.18.2",
-    "astro-icon": "^1.1.5",
+    "astro-icon": "^1.2.0",
     "pagefind": "^1.5.2",
     "sirv": "^3.0.2",
     "tailwindcss": "^4.3.3"
